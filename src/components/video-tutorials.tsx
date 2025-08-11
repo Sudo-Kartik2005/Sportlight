@@ -7,10 +7,6 @@ interface VideoTutorialsProps {
 }
 
 export function VideoTutorials({ sport }: VideoTutorialsProps) {
-  if (!sport.videoTutorials || sport.videoTutorials.length === 0) {
-    return null;
-  }
-
   return (
     <Card className="shadow-lg">
       <CardHeader>
