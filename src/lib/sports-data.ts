@@ -24,9 +24,9 @@ export const sportsData: Sport[] = [
       { term: "Ad Court", definition: "The left side of the court, where the 'advantage' point is played." },
     ],
     videoTutorials: [
-      { title: "Tennis For Beginners | A Complete Guide", videoId: "VIj_gP_k-s4" },
-      { title: "How To Hit The Perfect Forehand | 3 Simple Steps", videoId: "1_2C69n_A4c" },
-      { title: "How To SERVE In Tennis For Beginners", videoId: "JTGSa1g0-bQ" },
+      { title: "How To Play Tennis: A Beginner's Guide", videoId: "4_e0u_C-8cE" },
+      { title: "Learn The Tennis Forehand in 3 Simple Steps", videoId: "g5yJ6_28aCo" },
+      { title: "How To Serve In Tennis | A Complete Beginner's Guide", videoId: "Y1wAOfA5f2s" },
     ],
   },
   {
@@ -44,9 +44,9 @@ export const sportsData: Sport[] = [
       { term: "Alley-oop", definition: "A play where one player throws the ball near the basket to a teammate who jumps, catches the ball in mid-air and scores." },
     ],
     videoTutorials: [
-      { title: "Basketball Rules For Beginners", videoId: "xaY82iL7YcE" },
-      { title: "How To Dribble A Basketball For Beginners!", videoId: "y2Qz_UL22yI" },
-      { title: "3 Keys To PERFECT Shooting Form!", videoId: "3v8_9-s0p-I" },
+      { title: "Basketball for Beginners - The Rules", videoId: "Z129udE2_F8" },
+      { title: "How To Dribble A Basketball For Beginners", videoId: "sk5uO48I_2A" },
+      { title: "How To Shoot a Basketball PERFECTLY", videoId: "Nis1_LP2p6M" },
     ],
   },
   {
@@ -64,9 +64,9 @@ export const sportsData: Sport[] = [
       { term: "Drop Shot", definition: "A soft shot that drops just over the net in the opponent's forecourt." },
     ],
     videoTutorials: [
-      { title: "Badminton Basics: A Beginner's Guide", videoId: "02e8651-gI8" },
-      { title: "6 Steps to a PERFECT Badminton Smash", videoId: "pPe2SSnb3g0" },
-      { title: "Badminton Footwork - The 6 Main Corners", videoId: "r5o3OqE4p9Y" },
+      { title: "Badminton 101: The Ultimate Beginner's Guide", videoId: "a-n_84YmF1g" },
+      { title: "How to Smash in Badminton (The 5 Steps)", videoId: "TfuQw4s_o0A" },
+      { title: "Badminton Basics: Grip, Stance & Footwork", videoId: "p6T--S4LHaw" },
     ],
   },
 ];
