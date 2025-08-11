@@ -36,9 +36,7 @@ export default function Home({ searchParams }: HomePageProps) {
           <div className="space-y-12">
             <h2 className="font-headline text-4xl font-bold text-center">{selectedSport.name}</h2>
             <SportInfo sport={selectedSport} />
-            {selectedSport.videoTutorials && selectedSport.videoTutorials.length > 0 && (
-              <VideoTutorials sport={selectedSport} />
-            )}
+            <VideoTutorials sport={selectedSport} />
             <ChatCoach sportName={selectedSport.name} />
           </div>
         ) : (

@@ -15,7 +15,7 @@ export function VideoTutorials({ sport }: VideoTutorialsProps) {
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-3 font-headline text-3xl">
-          <Youtube className="h-8 w-8 text-red-600" />
+          <Youtube className="h-8 w-8 text-primary" />
           Video Tutorials
         </CardTitle>
       </CardHeader>
