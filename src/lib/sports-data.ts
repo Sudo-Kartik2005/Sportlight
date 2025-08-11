@@ -23,9 +23,9 @@ export const sportsData: Sport[] = [
       { term: "Ad Court", definition: "The left side of the court, where the 'advantage' point is played." },
     ],
     videoTutorials: [
-      { title: "Beginner's Guide to Tennis", videoId: "fpl_S11a_JA" },
-      { title: "How to Hit a Forehand", videoId: "ALj_1E_if3w" },
-      { title: "Mastering the Serve", videoId: "pDLaF0aR_s0" },
+      { title: "Tennis For Beginners | A Complete Guide", videoId: "VIj_gP_k-s4" },
+      { title: "The PERFECT Tennis Forehand In 5 Simple Steps", videoId: "tU6n_3o1WlE" },
+      { title: "How To SERVE In Tennis For Beginners", videoId: "JTGSa1g0-bQ" },
     ],
   },
   {
@@ -43,9 +43,9 @@ export const sportsData: Sport[] = [
       { term: "Alley-oop", definition: "A play where one player throws the ball near the basket to a teammate who jumps, catches the ball in mid-air and scores." },
     ],
     videoTutorials: [
-      { title: "Basketball Rules for Beginners", videoId: "ga5_F00P1sQ" },
-      { title: "How to Dribble a Basketball", videoId: "L4_z_Q71L-o" },
-      { title: "Shooting Form Tutorial", videoId: "0M1F4i_2S3s" },
+      { title: "Basketball Rules For Beginners", videoId: "xaY82iL7YcE" },
+      { title: "How To Dribble A Basketball For Beginners!", videoId: "y2Qz_UL22yI" },
+      { title: "3 Keys To PERFECT Shooting Form!", videoId: "3v8_9-s0p-I" },
     ],
   },
   {
@@ -63,9 +63,9 @@ export const sportsData: Sport[] = [
       { term: "Drop Shot", definition: "A soft shot that drops just over the net in the opponent's forecourt." },
     ],
     videoTutorials: [
-      { title: "Badminton Basics for Beginners", videoId: "1tV9xJ1i4kY" },
-      { title: "How to Smash in Badminton", videoId: "iL5g3c2p2A4" },
-      { title: "Defensive Footwork Drills", videoId: "YFv_3k6pW_E" },
+      { title: "Badminton 101: The Ultimate Beginner's Guide", videoId: "PltA8H_aQ-A" },
+      { title: "6 Steps to a PERFECT Badminton Smash", videoId: "pPe2SSnb3g0" },
+      { title: "Badminton Footwork - The 6 Main Corners", videoId: "r5o3OqE4p9Y" },
     ],
   },
 ];
