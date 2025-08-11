@@ -1,8 +1,8 @@
 "use server";
 
-import { aiChatCoach, type AiChatCoachInput } from "@/ai/flows/ai-chat-coach";
+import { aiChatCoach, type AiChatCoachInput, type AiChatCoachOutput } from "@/ai/flows/ai-chat-coach";
 
-export async function getAiCoachResponse(input: AiChatCoachInput) {
+export async function getAiCoachResponse(input: AiChatCoachInput): Promise<{ success: true, data: AiChatCoachOutput } | { success: false, error: string }> {
   try {
     const result = await aiChatCoach(input);
     return { success: true, data: result };

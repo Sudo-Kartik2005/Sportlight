@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Bot, User, CornerDownLeft, Loader2 } from "lucide-react";
+import { Bot, User, CornerDownLeft, Loader2, Dumbbell } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -14,6 +14,7 @@ import { getAiCoachResponse } from "@/app/actions";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 interface ChatCoachProps {
   sportName: string;
@@ -28,6 +29,7 @@ type ChatInput = z.infer<typeof ChatSchema>;
 interface Message {
   role: "user" | "assistant";
   content: string;
+  drills?: { name: string; description: string }[];
 }
 
 export function ChatCoach({ sportName }: ChatCoachProps) {
@@ -60,7 +62,11 @@ export function ChatCoach({ sportName }: ChatCoachProps) {
     });
 
     if (response.success && response.data) {
-      const assistantMessage: Message = { role: "assistant", content: response.data.answer };
+      const assistantMessage: Message = { 
+        role: "assistant", 
+        content: response.data.answer,
+        drills: response.data.drills
+      };
       setMessages((prev) => [...prev, assistantMessage]);
     } else {
       const errorMessage: Message = { role: "assistant", content: response.error || "Sorry, something went wrong." };
@@ -80,7 +86,7 @@ export function ChatCoach({ sportName }: ChatCoachProps) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="border rounded-lg p-4 h-96 flex flex-col">
+        <div className="border rounded-lg p-4 h-[450px] flex flex-col">
           <ScrollArea className="flex-grow pr-4 -mr-4 mb-4" ref={scrollAreaRef}>
             <div className="space-y-6">
               {messages.length === 0 ? (
@@ -98,6 +104,24 @@ export function ChatCoach({ sportName }: ChatCoachProps) {
                     )}
                     <div className={cn("max-w-[75%] rounded-lg p-3 text-sm shadow-md", message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted")}>
                       <p className="whitespace-pre-wrap">{message.content}</p>
+                       {message.drills && message.drills.length > 0 && (
+                        <div className="mt-4">
+                          <h4 className="font-bold mb-2 flex items-center gap-2">
+                            <Dumbbell className="h-5 w-5" />
+                            Suggested Drills
+                          </h4>
+                          <Accordion type="single" collapsible className="w-full bg-background/50 rounded-md px-3">
+                            {message.drills.map((drill, drillIndex) => (
+                              <AccordionItem value={`item-${drillIndex}`} key={drillIndex} className={drillIndex === message.drills!.length - 1 ? "border-b-0" : ""}>
+                                <AccordionTrigger className="text-sm">{drill.name}</AccordionTrigger>
+                                <AccordionContent className="whitespace-pre-wrap text-xs">
+                                  {drill.description}
+                                </AccordionContent>
+                              </AccordionItem>
+                            ))}
+                          </Accordion>
+                        </div>
+                      )}
                     </div>
                      {message.role === "user" && (
                       <Avatar className="h-8 w-8">
