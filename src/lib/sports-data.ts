@@ -5,7 +5,7 @@ export type Sport = {
   history: string;
   rules: { title: string; content: string }[];
   keyTerms: { term: string; definition: string }[];
-  videoTutorials: { title: string; videoUrl: string; thumbnailUrl: string }[];
+  photoGallery: { imageUrl: string; caption: string; hint: string }[];
 };
 
 export const sportsData: Sport[] = [
@@ -23,10 +23,10 @@ export const sportsData: Sport[] = [
       { term: "Deuce", definition: "A score of 40-40." },
       { term: "Ad Court", definition: "The left side of the court, where the 'advantage' point is played." },
     ],
-    videoTutorials: [
-      { title: "Beginner Tennis Lesson", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "Mastering the Forehand", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "Perfecting Your Serve", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+    photoGallery: [
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A powerful serve in action.", hint: "tennis serve" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "Players rally on a clay court.", hint: "tennis rally" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "Close-up of a tennis racket and ball.", hint: "tennis equipment" },
     ],
   },
   {
@@ -43,10 +43,10 @@ export const sportsData: Sport[] = [
       { term: "Slam Dunk", definition: "A shot where a player forces the ball through the basket with one or both hands." },
       { term: "Alley-oop", definition: "A play where one player throws the ball near the basket to a teammate who jumps, catches the ball in mid-air and scores." },
     ],
-    videoTutorials: [
-      { title: "Basketball Rules for Beginners", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "How to Dribble Perfectly", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "Perfect Shooting Form", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+    photoGallery: [
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A player mid-air during a slam dunk.", hint: "basketball dunk" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A tense moment at the free-throw line.", hint: "basketball freethrow" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "Detailed view of a basketball court.", hint: "basketball court" },
     ],
   },
   {
@@ -63,10 +63,10 @@ export const sportsData: Sport[] = [
       { term: "Smash", definition: "A powerful overhead shot hit steeply downwards." },
       { term: "Drop Shot", definition: "A soft shot that drops just over the net in the opponent's forecourt." },
     ],
-    videoTutorials: [
-      { title: "Badminton for Beginners", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "5 Steps to a Powerful Smash", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
-      { title: "Mastering Footwork", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+    photoGallery: [
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A player jumps for a powerful smash.", hint: "badminton smash" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A delicate drop shot close to the net.", hint: "badminton net" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "The shuttlecock in high-speed motion.", hint: "badminton shuttlecock" },
     ],
   },
 ];
