@@ -1,3 +1,4 @@
+
 export type Sport = {
   id: string;
   name: string;
@@ -24,7 +25,7 @@ export const sportsData: Sport[] = [
     ],
     videoTutorials: [
       { title: "Tennis For Beginners | A Complete Guide", videoId: "VIj_gP_k-s4" },
-      { title: "How To Hit The Perfect Forehand in 3 Simple Steps", videoId: "FayK_c_3iWw" },
+      { title: "How To Hit The Perfect Forehand | 3 Simple Steps", videoId: "1_2C69n_A4c" },
       { title: "How To SERVE In Tennis For Beginners", videoId: "JTGSa1g0-bQ" },
     ],
   },
