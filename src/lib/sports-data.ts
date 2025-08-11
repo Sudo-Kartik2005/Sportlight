@@ -64,7 +64,7 @@ export const sportsData: Sport[] = [
       { term: "Drop Shot", definition: "A soft shot that drops just over the net in the opponent's forecourt." },
     ],
     videoTutorials: [
-      { title: "Badminton 101: The Ultimate Beginner's Guide", videoId: "PltA8H_aQ-A" },
+      { title: "Badminton Basics: A Beginner's Guide", videoId: "02e8651-gI8" },
       { title: "6 Steps to a PERFECT Badminton Smash", videoId: "pPe2SSnb3g0" },
       { title: "Badminton Footwork - The 6 Main Corners", videoId: "r5o3OqE4p9Y" },
     ],
