@@ -24,7 +24,7 @@ export const sportsData: Sport[] = [
     ],
     videoTutorials: [
       { title: "Tennis For Beginners | A Complete Guide", videoId: "VIj_gP_k-s4" },
-      { title: "The PERFECT Tennis Forehand In 5 Simple Steps", videoId: "tU6n_3o1WlE" },
+      { title: "How To Hit The Perfect Forehand in 3 Simple Steps", videoId: "FayK_c_3iWw" },
       { title: "How To SERVE In Tennis For Beginners", videoId: "JTGSa1g0-bQ" },
     ],
   },
