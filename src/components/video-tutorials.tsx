@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Youtube } from "lucide-react";
+import { Video } from "lucide-react";
 
 interface VideoTutorialsProps {
   sport: Sport;
@@ -24,7 +24,7 @@ export function VideoTutorials({ sport }: VideoTutorialsProps) {
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-3 font-headline text-3xl">
-          <Youtube className="h-8 w-8 text-primary" />
+          <Video className="h-8 w-8 text-primary" />
           Video Tutorials
         </CardTitle>
       </CardHeader>
@@ -37,24 +37,25 @@ export function VideoTutorials({ sport }: VideoTutorialsProps) {
           className="w-full"
         >
           <CarouselContent>
-            {sport.videoTutorials.map((video) => (
-              <CarouselItem key={video.videoId} className="md:basis-1/2 lg:basis-1/3">
+            {sport.videoTutorials.map((video, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Link
-                    href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                    href={video.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group"
                   >
                     <div className="overflow-hidden rounded-lg border aspect-video relative">
                       <Image
-                        src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                        src={video.thumbnailUrl}
                         alt={video.title}
                         fill
                         className="object-cover transition-transform group-hover:scale-105"
+                        data-ai-hint="sports video"
                       />
                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                        <Youtube className="h-12 w-12 text-white/80" />
+                        <Video className="h-12 w-12 text-white/80" />
                       </div>
                     </div>
                     <h3 className="font-semibold mt-2 group-hover:text-primary transition-colors">{video.title}</h3>

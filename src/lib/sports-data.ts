@@ -5,7 +5,7 @@ export type Sport = {
   history: string;
   rules: { title: string; content: string }[];
   keyTerms: { term: string; definition: string }[];
-  videoTutorials: { title: string; videoId: string }[];
+  videoTutorials: { title: string; videoUrl: string; thumbnailUrl: string }[];
 };
 
 export const sportsData: Sport[] = [
@@ -24,9 +24,9 @@ export const sportsData: Sport[] = [
       { term: "Ad Court", definition: "The left side of the court, where the 'advantage' point is played." },
     ],
     videoTutorials: [
-      { title: "How To Play Tennis: A Beginner's Guide", videoId: "4_e0u_C-8cE" },
-      { title: "Learn The Tennis Forehand in 3 Simple Steps", videoId: "g5yJ6_28aCo" },
-      { title: "How To Serve In Tennis | A Complete Beginner's Guide", videoId: "Y1wAOfA5f2s" },
+      { title: "Beginner Tennis Lesson", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "Mastering the Forehand", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "Perfecting Your Serve", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
     ],
   },
   {
@@ -44,9 +44,9 @@ export const sportsData: Sport[] = [
       { term: "Alley-oop", definition: "A play where one player throws the ball near the basket to a teammate who jumps, catches the ball in mid-air and scores." },
     ],
     videoTutorials: [
-      { title: "Basketball for Beginners - The Rules", videoId: "Z129udE2_F8" },
-      { title: "How To Dribble A Basketball For Beginners", videoId: "sk5uO48I_2A" },
-      { title: "How To Shoot a Basketball PERFECTLY", videoId: "Nis1_LP2p6M" },
+      { title: "Basketball Rules for Beginners", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "How to Dribble Perfectly", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "Perfect Shooting Form", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
     ],
   },
   {
@@ -64,9 +64,9 @@ export const sportsData: Sport[] = [
       { term: "Drop Shot", definition: "A soft shot that drops just over the net in the opponent's forecourt." },
     ],
     videoTutorials: [
-      { title: "Badminton 101: The Ultimate Beginner's Guide", videoId: "a-n_84YmF1g" },
-      { title: "How to Smash in Badminton (The 5 Steps)", videoId: "TfuQw4s_o0A" },
-      { title: "Badminton Basics: Grip, Stance & Footwork", videoId: "p6T--S4LHaw" },
+      { title: "Badminton for Beginners", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "5 Steps to a Powerful Smash", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
+      { title: "Mastering Footwork", videoUrl: "#", thumbnailUrl: "https://placehold.co/1280x720.png" },
     ],
   },
 ];
