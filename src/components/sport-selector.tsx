@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -18,7 +19,7 @@ export function SportSelector() {
   const selectedSportId = searchParams.get("sport") || "";
 
   const handleValueChange = (sportId: string) => {
-    router.push(`/?sport=${sportId}`);
+    router.push(`/sports?sport=${sportId}`);
   };
 
   return (
@@ -30,7 +31,10 @@ export function SportSelector() {
         <SelectContent>
           {sportsData.map((sport: Sport) => (
             <SelectItem key={sport.id} value={sport.id} className="text-lg">
-              {sport.name}
+                <div className="flex items-center gap-3">
+                    <sport.icon className="h-5 w-5 text-muted-foreground" />
+                    <span>{sport.name}</span>
+                </div>
             </SelectItem>
           ))}
         </SelectContent>

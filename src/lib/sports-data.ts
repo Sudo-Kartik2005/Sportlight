@@ -1,4 +1,6 @@
 
+import { type LucideIcon, Target, Bike, Puzzle, Fence, VenetianMask, Anchor } from "lucide-react";
+
 export type RoadmapStage = {
   stageName: string;
   duration: string;
@@ -15,6 +17,7 @@ export type RoadmapKey = `${string}_${string}_${string}`; // ageGroup_fitnessLev
 export type Sport = {
   id: string;
   name: string;
+  icon: LucideIcon;
   history: string;
   rules: { title: string; content: string }[];
   keyTerms: { term: string; definition: string }[];
@@ -88,6 +91,7 @@ export const sportsData: Sport[] = [
   {
     id: "tennis",
     name: "Tennis",
+    icon: Target,
     history: "The modern game of tennis originated in Birmingham, England, in the late 19th century as 'lawn tennis'. It had close connections both to various field ('jousting') games such as croquet and bowls as well as to the older racket sport of real tennis.",
     rules: [
       { title: "Scoring", content: "Points are awarded in scores of 15, 30, and 40. 40-40 is called deuce. A player must win by two clear points." },
@@ -109,6 +113,7 @@ export const sportsData: Sport[] = [
   {
     id: "basketball",
     name: "Basketball",
+    icon: Bike,
     history: "Invented in December 1891 by Canadian physical education instructor James Naismith as a less injury-prone sport than football. The game was established fairly quickly, becoming very popular as the 20th century progressed, first in America and then in other parts of the world.",
     rules: [
       { title: "Game Play", content: "The game is played between two teams of five players each. The objective is to shoot a ball through a hoop 18 inches (46 cm) in diameter and 10 feet (3.048 m) high." },
@@ -129,6 +134,7 @@ export const sportsData: Sport[] = [
   {
     id: "badminton",
     name: "Badminton",
+    icon: Puzzle,
     history: "The game is named for Badminton House, the country estate of the Duke of Beaufort in Gloucestershire, England, where it was first played in about 1873. The roots of the sport can be traced to ancient Greece, China, and India.",
     rules: [
       { title: "Scoring", content: "A match consists of the best of 3 games of 21 points. The side winning a rally adds a point to its score." },
@@ -144,6 +150,27 @@ export const sportsData: Sport[] = [
       { imageUrl: "https://placehold.co/600x400.png", caption: "A player jumps for a powerful smash.", hint: "badminton smash" },
       { imageUrl: "https://placehold.co/600x400.png", caption: "A delicate drop shot close to the net.", hint: "badminton net" },
       { imageUrl: "https://placehold.co/600x400.png", caption: "The shuttlecock in high-speed motion.", hint: "badminton shuttlecock" },
+    ],
+  },
+   {
+    id: "boxing",
+    name: "Boxing",
+    icon: Fence,
+    history: "Boxing is one of the oldest combat sports, with roots tracing back to ancient Greece. Modern boxing evolved in the 18th and 19th centuries, particularly in Great Britain, with the establishment of the Marquess of Queensberry Rules in 1867, which form the basis of the sport today.",
+    rules: [
+      { title: "Rounds", content: "Professional boxing matches consist of a number of three-minute rounds, typically up to 12 rounds for a championship fight." },
+      { title: "Winning", content: "A bout is won by knockout, technical knockout, or by a decision from the judges based on a points system." },
+      { title: "Fouls", content: "Illegal moves include hitting below the belt, holding, tripping, and hitting with an open glove or the inside of the hand." },
+    ],
+    keyTerms: [
+      { term: "Jab", definition: "A quick, straight punch thrown with the lead hand." },
+      { term: "Cross", definition: "A powerful, straight punch thrown with the rear hand." },
+      { term: "Uppercut", definition: "A short, rising punch thrown with either hand." },
+    ],
+    photoGallery: [
+      { imageUrl: "https://placehold.co/600x400.png", caption: "Two boxers in the middle of an intense exchange.", hint: "boxing match" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "A boxer training with a heavy bag.", hint: "boxing training" },
+      { imageUrl: "https://placehold.co/600x400.png", caption: "The iconic boxing ring before a match.", hint: "boxing ring" },
     ],
   },
 ];

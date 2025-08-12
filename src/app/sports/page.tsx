@@ -1,0 +1,69 @@
+
+'use client';
+
+import { Suspense, useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { getSportById, sportsData, type Sport } from '@/lib/sports-data';
+import { SportInfo } from '@/components/sport-info';
+import { PhotoGallery } from '@/components/photo-gallery';
+import { ChatCoach } from '@/components/chat-coach';
+import { Card, CardContent } from '@/components/ui/card';
+import { Trophy } from 'lucide-react';
+import { RoadmapGenerator } from '@/components/roadmap-generator';
+
+function SportsPageContent() {
+  const searchParams = useSearchParams();
+  const sportId = searchParams.get('sport') || sportsData[0].id;
+  
+  const [currentSport, setCurrentSport] = useState<Sport | null>(null);
+
+  useEffect(() => {
+    setCurrentSport(getSportById(sportId));
+  }, [sportId]);
+
+  return (
+    <div className="container mx-auto px-4 py-8 md:py-12">
+      <header className="text-center mb-8 md:mb-12">
+        <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+          {currentSport ? currentSport.name : "Sportlight"}
+        </h1>
+        <p className="mt-2 text-lg md:text-xl text-muted-foreground">
+          Your Personal Sports Knowledge Hub
+        </p>
+      </header>
+
+      {currentSport ? (
+        <div className="space-y-12">
+          <SportInfo sport={currentSport} />
+          
+          {currentSport.roadmaps && <RoadmapGenerator sport={currentSport} />}
+
+          {currentSport.photoGallery && currentSport.photoGallery.length > 0 && (
+            <PhotoGallery sport={currentSport} />
+          )}
+          
+          <ChatCoach sportName={currentSport.name} />
+        </div>
+      ) : (
+        <Card className="text-center py-20 shadow-lg">
+          <CardContent>
+            <Trophy className="mx-auto h-16 w-16 text-muted-foreground/50" />
+            <h2 className="mt-6 font-headline text-2xl font-semibold">Select a Sport to Begin</h2>
+            <p className="mt-2 text-muted-foreground">
+              Choose a sport from the list on the left to get started.
+            </p>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
+
+
+export default function SportsPage() {
+  return (
+    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+      <SportsPageContent />
+    </Suspense>
+  );
+}
