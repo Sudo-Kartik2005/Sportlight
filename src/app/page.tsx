@@ -63,12 +63,12 @@ export default function LandingPage() {
                 </div>
               </div>
                <Image
-                src="https://placehold.co/600x400.png"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
                 width="600"
-                height="400"
+                height="600"
                 alt="Hero"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-                data-ai-hint="athlete running"
+                data-ai-hint="athlete training"
               />
             </div>
           </div>
