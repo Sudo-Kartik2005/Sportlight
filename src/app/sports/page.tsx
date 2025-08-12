@@ -10,6 +10,7 @@ import { ChatCoach } from '@/components/chat-coach';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy } from 'lucide-react';
 import { RoadmapGenerator } from '@/components/roadmap-generator';
+import { NearbyCenters } from '@/components/nearby-centers';
 
 function SportsPageContent() {
   const searchParams = useSearchParams();
@@ -37,6 +38,8 @@ function SportsPageContent() {
           <SportInfo sport={currentSport} />
           
           {currentSport.roadmaps && <RoadmapGenerator sport={currentSport} />}
+
+          <NearbyCenters sport={currentSport} />
 
           {currentSport.photoGallery && currentSport.photoGallery.length > 0 && (
             <PhotoGallery sport={currentSport} />
