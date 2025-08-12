@@ -10,28 +10,17 @@ import { PhotoGallery } from '@/components/photo-gallery';
 import { ChatCoach } from '@/components/chat-coach';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy } from 'lucide-react';
-import { ImageGenerator } from '@/components/image-generator';
 import { RoadmapGenerator } from '@/components/roadmap-generator';
 
 function HomePageContent() {
   const searchParams = useSearchParams();
   const sportId = searchParams.get('sport') || sportsData[0].id;
   
-  const [currentSport, setCurrentSport] = useState<Sport | null>(() => getSportById(sportId));
+  const [currentSport, setCurrentSport] = useState<Sport | null>(null);
 
   useEffect(() => {
     setCurrentSport(getSportById(sportId));
   }, [sportId]);
-
-  const handleNewImage = (newImage: { imageUrl: string; caption: string; hint: string }) => {
-    if (currentSport) {
-      const updatedSport = {
-        ...currentSport,
-        photoGallery: [newImage, ...currentSport.photoGallery],
-      };
-      setCurrentSport(updatedSport);
-    }
-  };
 
   return (
     <main className="container mx-auto px-4 py-8 md:py-12">
@@ -54,8 +43,6 @@ function HomePageContent() {
           <SportInfo sport={currentSport} />
           
           {currentSport.roadmaps && <RoadmapGenerator sport={currentSport} />}
-
-          <ImageGenerator sportName={currentSport.name} onNewImage={handleNewImage} />
 
           {currentSport.photoGallery && currentSport.photoGallery.length > 0 && (
             <PhotoGallery sport={currentSport} />
