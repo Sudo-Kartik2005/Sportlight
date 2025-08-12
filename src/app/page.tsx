@@ -62,7 +62,7 @@ export default function LandingPage() {
                 </div>
               </div>
                <img
-                src="https://placehold.co/600x400.png"
+                src="https://images.unsplash.com/photo-1587280501635-397de3b713e2?q=80&w=2070&auto=format&fit=crop"
                 width="600"
                 height="400"
                 alt="Hero"
