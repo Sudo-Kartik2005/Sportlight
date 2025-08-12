@@ -63,12 +63,12 @@ export default function LandingPage() {
                 </div>
               </div>
                <Image
-                src="https://images.unsplash.com/photo-1587280501635-397de3b713e2?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1517649763942-7e3c76277c66?q=80&w=2070&auto=format&fit=crop"
                 width="600"
                 height="400"
                 alt="Hero"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-                data-ai-hint="athlete celebrating victory"
+                data-ai-hint="athlete running"
               />
             </div>
           </div>
