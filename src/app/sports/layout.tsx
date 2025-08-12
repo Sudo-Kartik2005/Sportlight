@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { ThemeToggleButton } from '@/components/theme-toggle';
 
 
 export default function DashboardLayout({
@@ -41,6 +42,9 @@ export default function DashboardLayout({
                          <TooltipContent side="right">{sport.name}</TooltipContent>
                     </Tooltip>
                 ))}
+            </nav>
+            <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
+                <ThemeToggleButton />
             </nav>
         </TooltipProvider>
       </aside>
