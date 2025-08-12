@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Mountain, Flame, Dumbbell } from 'lucide-react';
 import { ThemeToggleButton } from '@/components/theme-toggle';
@@ -61,7 +62,7 @@ export default function LandingPage() {
                   </Link>
                 </div>
               </div>
-               <img
+               <Image
                 src="https://images.unsplash.com/photo-1587280501635-397de3b713e2?q=80&w=2070&auto=format&fit=crop"
                 width="600"
                 height="400"
