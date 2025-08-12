@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    // This is to allow the Next.js dev server to accept requests from the
+    // an external development environment.
+    allowedDevOrigins: [
+      'https://*.cloudworkstations.dev',
+    ],
+  },
 };
 
 export default nextConfig;
