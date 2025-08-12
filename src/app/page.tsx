@@ -11,12 +11,12 @@ import { ChatCoach } from '@/components/chat-coach';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy } from 'lucide-react';
 import { ImageGenerator } from '@/components/image-generator';
+import { RoadmapGenerator } from '@/components/roadmap-generator';
 
 function HomePageContent() {
   const searchParams = useSearchParams();
   const sportId = searchParams.get('sport') || sportsData[0].id;
   
-  // Use state to manage sport data to allow for updates
   const [currentSport, setCurrentSport] = useState<Sport | null>(() => getSportById(sportId));
 
   useEffect(() => {
@@ -53,6 +53,8 @@ function HomePageContent() {
           <h2 className="font-headline text-4xl font-bold text-center">{currentSport.name}</h2>
           <SportInfo sport={currentSport} />
           
+          {currentSport.roadmaps && <RoadmapGenerator sport={currentSport} />}
+
           <ImageGenerator sportName={currentSport.name} onNewImage={handleNewImage} />
 
           {currentSport.photoGallery && currentSport.photoGallery.length > 0 && (

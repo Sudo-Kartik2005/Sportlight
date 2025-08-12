@@ -1,4 +1,17 @@
 
+export type RoadmapStage = {
+  stageName: string;
+  duration: string;
+  description: string;
+  resources: { title: string; url: string }[];
+};
+
+export type Roadmap = {
+  stages: RoadmapStage[];
+};
+
+export type RoadmapKey = `${string}_${string}_${string}`; // ageGroup_fitnessLevel_budget
+
 export type Sport = {
   id: string;
   name: string;
@@ -6,7 +19,70 @@ export type Sport = {
   rules: { title: string; content: string }[];
   keyTerms: { term: string; definition: string }[];
   photoGallery: { imageUrl: string; caption: string; hint: string }[];
+  roadmaps?: Record<RoadmapKey, Roadmap>;
 };
+
+const tennisRoadmaps: Record<RoadmapKey, Roadmap> = {
+  "15-25_Beginner_Low": {
+    stages: [
+      {
+        stageName: "Beginner Basics",
+        duration: "3 months",
+        description: "Focus on learning the fundamental strokes (forehand, backhand, volley, serve), basic footwork, and understanding the rules and scoring of the game.",
+        resources: [
+          { title: "Tennis Basics for Beginners", url: "https://www.youtube.com/watch?v=1oQh6S_h4aQ" },
+          { title: "Find a Public Tennis Court Near You", url: "https://www.usta.com/en/home/play/tennis-courts.html" },
+        ],
+      },
+      {
+        stageName: "Intermediate Development",
+        duration: "6 months",
+        description: "Work on consistency, adding spin to your shots, improving serve placement, and developing basic match strategies. Play regularly with different partners.",
+        resources: [
+          { title: "How to Add Topspin to Your Forehand", url: "https://www.youtube.com/watch?v=18a-4-BP3v4" },
+        ],
+      },
+      {
+        stageName: "Advanced Competitor",
+        duration: "12+ months",
+        description: "Refine advanced techniques, develop a strong mental game, and start competing in local leagues or tournaments to gain match experience.",
+        resources: [
+          { title: "Join a USTA League", url: "https://www.usta.com/en/home/play/leagues.html" },
+        ],
+      },
+    ],
+  },
+   "26-40_Intermediate_Medium": {
+    stages: [
+      {
+        stageName: "Refining Skills",
+        duration: "4 months",
+        description: "You have the basics down. Now focus on shot consistency, improving your serve's power and accuracy, and developing a reliable second serve. Consider joining a weekly clinic.",
+        resources: [
+          { title: "Advanced Serving Techniques", url: "https://www.youtube.com/watch?v=j_pT_h1tE1E" },
+           { title: "Tennis Drills for Intermediate Players", url: "https://www.youtube.com/watch?v=6hN426g_TOQ" },
+        ],
+      },
+      {
+        stageName: "Competitive Play",
+        duration: "8 months",
+        description: "Start playing in local leagues or club tournaments. Work with a coach occasionally to analyze your game and identify weaknesses. Focus on strategy and point construction.",
+        resources: [
+          { title: "How to Play Smarter Tennis", url: "https://www.youtube.com/watch?v=gS-p9E5-D-E" }
+        ],
+      },
+      {
+        stageName: "Peak Performance",
+        duration: "12+ months",
+        description: "Focus on maintaining physical fitness, preventing injuries, and developing advanced strategies based on your opponent's style. Compete regularly to stay sharp.",
+        resources: [
+           { title: "Tennis Fitness and Footwork Drills", url: "https://www.youtube.com/watch?v=F2H0i0iN_wY" }
+        ],
+      },
+    ],
+  }
+};
+
 
 export const sportsData: Sport[] = [
   {
@@ -24,10 +100,11 @@ export const sportsData: Sport[] = [
       { term: "Ad Court", definition: "The left side of the court, where the 'advantage' point is played." },
     ],
     photoGallery: [
-      { imageUrl: "https://placehold.co/600x400.png", caption: "A powerful serve in action.", hint: "tennis serve" },
-      { imageUrl: "https://placehold.co/600x400.png", caption: "Players rally on a clay court.", hint: "tennis rally" },
-      { imageUrl: "https://placehold.co/600x400.png", caption: "Close-up of a tennis racket and ball.", hint: "tennis equipment" },
+        { imageUrl: "https://placehold.co/600x400.png", caption: "A powerful forehand winner.", hint: "tennis forehand" },
+        { imageUrl: "https://placehold.co/600x400.png", caption: "A focused player prepares to return a serve.", hint: "tennis return" },
+        { imageUrl: "https://placehold.co/600x400.png", caption: "Celebrating a match point on a grass court.", hint: "tennis celebration" },
     ],
+    roadmaps: tennisRoadmaps
   },
   {
     id: "basketball",
